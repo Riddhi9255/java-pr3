@@ -1,0 +1,140 @@
+// Shape class (abstract base class)
+abstract class Shape {
+    private String color;
+
+    // Constructor
+    public Shape(String color) {
+        this.color = color;
+    }
+
+    // Getter method for color
+    public String getColor() {
+        return color;
+    }
+
+    // Abstract method to get information about the shape
+    public abstract String getInfo();
+
+    // Abstract method to calculate area
+    public abstract double calculateArea();
+
+    // Abstract method to calculate perimeter (or circumference)
+    public abstract double calculatePerimeter();
+}
+
+// Circle class
+class Circle extends Shape {
+    private double radius;
+
+    // Constructor
+    public Circle(String color, double radius) {
+        super(color);
+        this.radius = radius;
+    }
+
+    // Override getInfo() method
+    @Override
+    public String getInfo() {
+        return "Circle - Color: " + getColor() + ", Radius: " + radius;
+    }
+
+    // Override calculateArea() method
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    // Override calculatePerimeter() method (circumference)
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+// Rectangle class
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    // Constructor
+    public Rectangle(String color, double length, double width) {
+        super(color);
+        this.length = length;
+        this.width = width;
+    }
+
+    // Override getInfo() method
+    @Override
+    public String getInfo() {
+        return "Rectangle - Color: " + getColor() + ", Length: " + length + ", Width: " + width;
+    }
+
+    // Override calculateArea() method
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+
+    // Override calculatePerimeter() method
+    @Override
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+}
+
+// Triangle class
+class Triangle extends Shape {
+    private double side1;
+    private double side2;
+    private double side3;
+
+    // Constructor
+    public Triangle(String color, double side1, double side2, double side3) {
+        super(color);
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+    }
+
+    // Override getInfo() method
+    @Override
+    public String getInfo() {
+        return "Triangle - Color: " + getColor() + ", Side1: " + side1 + ", Side2: " + side2 + ", Side3: " + side3;
+    }
+
+    // Override calculateArea() method (using Heron's formula)
+    @Override
+    public double calculateArea() {
+        double s = (side1 + side2 + side3) / 2;
+        return Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+    }
+
+    // Override calculatePerimeter() method
+    @Override
+    public double calculatePerimeter() {
+        return side1 + side2 + side3;
+    }
+}
+
+// Test program
+public class ShapeTest {
+    public static void main(String[] args) {
+        // Create instances of Circle, Rectangle, and Triangle
+        Circle circle = new Circle("Red", 5.0);
+        Rectangle rectangle = new Rectangle("Blue", 4.0, 6.0);
+        Triangle triangle = new Triangle("Green", 3.0, 4.0, 5.0);
+         System.out.println("memdavadi riddhi ,220130318035");
+        // Display information and calculate area/perimeter for each shape
+        System.out.println(circle.getInfo());
+        System.out.println("Area: " + circle.calculateArea());
+        System.out.println("Perimeter: " + circle.calculatePerimeter());
+
+        System.out.println(rectangle.getInfo());
+        System.out.println("Area: " + rectangle.calculateArea());
+        System.out.println("Perimeter: " + rectangle.calculatePerimeter());
+
+        System.out.println(triangle.getInfo());
+        System.out.println("Area: " + triangle.calculateArea());
+        System.out.println("Perimeter: " + triangle.calculatePerimeter());
+    }
+}
