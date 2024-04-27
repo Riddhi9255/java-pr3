@@ -1,0 +1,23 @@
+
+interface Printable {
+    void print();
+}
+
+
+class Printer implements Printable {
+    @Override
+    public void print() {
+        System.out.println("Printing...");
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+  system.out.println("memdavadi riddhi 220130318035");
+        Printable printer = new Printer();
+
+        
+        printer.print();
+    }
+}
