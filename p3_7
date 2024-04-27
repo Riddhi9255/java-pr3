@@ -1,0 +1,33 @@
+
+interface Animal {
+    void eat();
+}
+
+
+interface Bird {
+    void fly();
+}
+
+class Sparrow implements Animal, Bird {
+    @Override
+    public void eat() {
+        System.out.println("Sparrow is eating");
+    }
+
+    @Override
+    public void fly() {
+        System.out.println("Sparrow is flying");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        system.out.println("memdavadi riddhi  220130318035");
+        Sparrow sparrow = new Sparrow();
+
+        
+        sparrow.eat(); // Output: Sparrow is eating
+        sparrow.fly(); // Output: Sparrow is flying
+    }
+}
