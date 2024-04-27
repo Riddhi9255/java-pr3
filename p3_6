@@ -1,0 +1,34 @@
+// Package 1
+package com.package1;
+
+
+public class Animal {
+    public void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+// Package 2
+package com.package2;
+
+// Importing Animal class from Package 1
+import com.package1.Animal;
+
+// Subclass in Package 2
+public class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        system.out.println("memdavdi riddhi j ,220130318035");
+        Dog dog = new Dog();
+
+        // Calling the makeSound() method
+        dog.makeSound(); // Output: Dog barks
+    }
+}
