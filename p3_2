@@ -1,0 +1,45 @@
+class Year {
+    int year;
+
+    Year(int year) {
+        this.year = year;
+    }
+
+    boolean isLeapYear() {
+        return false; // Base implementation, to be overridden by subclasses
+    }
+}
+
+class LeapYear extends Year {
+    LeapYear(int year) {
+        super(year);
+    }
+
+    @Override
+    boolean isLeapYear() {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
+}
+
+class NonLeapYear extends Year {
+    NonLeapYear(int year) {
+        super(year);
+    }
+
+    @Override
+    boolean isLeapYear() {
+        return !new LeapYear(year).isLeapYear();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int year = 2024;
+        Year yearChecker = new LeapYear(year);
+        if (yearChecker.isLeapYear()) {
+            System.out.println(year + " is a leap year.");
+        } else {
+            System.out.println(year + " is not a leap year.");
+        }
+    }
+}
