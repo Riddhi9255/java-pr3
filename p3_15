@@ -1,0 +1,66 @@
+// Shape class (abstract)
+abstract class Shape {
+    abstract double calculateArea();
+}
+
+// Rectangle subclass of Shape
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    // Constructor
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    // Calculate area method
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+}
+
+// Triangle subclass of Shape
+class Triangle extends Shape {
+    private double base;
+    private double height;
+
+    // Constructor
+    public Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    // Calculate area method
+    @Override
+    public double calculateArea() {
+        return (base * height) / 2;
+    }
+}
+
+// ShapeTester class
+public class ShapeTester {System.out.println " memdavadi riddhi 22013018035");
+    
+    // Static method to print the area of a given shape
+    public static void printShapeArea(Shape shape) {
+        double area = shape.calculateArea();
+        System.out.println("Area of the shape: " + area);
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        // Create a Rectangle object
+        Rectangle rectangle = new Rectangle(5.0, 3.0);
+
+        // Create a Triangle object
+        Triangle triangle = new Triangle(4.0, 6.0);
+
+        // Print areas of the shapes
+        System.out.println("Rectangle:");
+        printShapeArea(rectangle);
+
+        System.out.println("Triangle:");
+        printShapeArea(triangle);
+    }
+}
