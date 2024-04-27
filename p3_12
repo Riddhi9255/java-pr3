@@ -1,0 +1,66 @@
+// Shape class
+public class Shape {
+    private String color;
+
+    // Constructor
+    public Shape(String color) {
+        this.color = color;
+    }
+
+    // Getter method for color
+    public String getColor() {
+        return color;
+    }
+
+    // Method to get information about the shape
+    public String getInfo() {
+        return "Color: " + color;
+    }
+}
+
+// Subclass Circle
+public class Circle extends Shape {
+    private double radius;
+
+    // Constructor
+    public Circle(String color, double radius) {
+        super(color);
+        this.radius = radius;
+    }
+
+    // Override getInfo() method to include radius
+    @Override
+    public String getInfo() {
+        return "Color: " + getColor() + ", Radius: " + radius;
+    }
+}
+
+// Subclass Rectangle
+public class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    // Constructor
+    public Rectangle(String color, double length, double width) {
+        super(color);
+        this.length = length;
+        this.width = width;
+    }
+
+    // Override getInfo() method to include length and width
+    @Override
+    public String getInfo() {
+        return "Color: " + getColor() + ", Length: " + length + ", Width: " + width;
+    }
+}
+
+// Example usage
+public class Main {
+    public static void main(String[] args) {
+        Circle circle = new Circle("Red", 5.0);
+        System.out.println(circle.getInfo()); // Output: Color: Red, Radius: 5.0
+        system.out.println("memdavadi riddhi ,220130318035");
+        Rectangle rectangle = new Rectangle("Blue", 4.0, 6.0);
+        System.out.println(rectangle.getInfo()); // Output: Color: Blue, Length: 4.0, Width: 6.0
+    }
+}
