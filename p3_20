@@ -47,7 +47,7 @@ public class Main {
         Rectangle rectangle = new Rectangle(5, 4);
         System.out.println("Rectangle Area: " + rectangle.getArea());
         System.out.println("Rectangle Perimeter: " + rectangle.getPerimeter());
-System.out.println("memdavadi riddhi 22013031803);
+System.out.println("memdavadi riddhi 220130318035);
         // Create a Circle object
         Circle circle = new Circle(3);
         System.out.println("Circle Area: " + circle.getArea());
